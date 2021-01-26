@@ -4,14 +4,13 @@ var exphbs=require('express-handlebars');
 var ejs=require('ejs');
 var todoController=require('./ToDoController.js');
 var methodOverride=require('method-override');
-
+const dbURI=require('./key.js');
 
 const mongoose=require('mongoose');
 var app=express();
 
 const MongoClient=require('mongodb').MongoClient;
 
-const dbURI="mongodb+srv://mel0n:guest@cluster0.iazpd.mongodb.net/node-crud?retryWrites=true&w=majority";
 
 mongoose.connect(dbURI,{useNewUrlParser:true,useUnifiedTopology:true }) 
     .then((result)=>console.log('connected to db'))
